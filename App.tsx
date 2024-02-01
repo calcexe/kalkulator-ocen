@@ -71,20 +71,27 @@ export default function App() {
           <Text style={styles.inputTitle}>Zdobyte</Text>
         </View>
 
-        <View style={styles.inputsContainer}>
-          <TextInput
-            style={styles.input}
-            keyboardType="number-pad"
-            onChangeText={(text) => updateMaxPoints(text)}
-            value={max.toString()}
-          />
-          <TextInput
-            style={styles.input}
-            keyboardType="number-pad"
-            onChangeText={(text) => updateGainedPoints(text)}
-            value={gained.toString()}
-          />
-        </View>
+        {
+          <View style={styles.inputsContainer}>
+            <View style={{ flex: 1, margin: 20 }}>
+              <TextInput
+                style={styles.input}
+                keyboardType="number-pad"
+                onChangeText={(text) => updateMaxPoints(text)}
+                value={max.toString()}
+              />
+            </View>
+
+            <View style={{ flex: 1, margin: 20 }}>
+              <TextInput
+                style={styles.input}
+                keyboardType="number-pad"
+                onChangeText={(text) => updateGainedPoints(text)}
+                value={gained.toString()}
+              />
+            </View>
+          </View>
+        }
 
         <View style={styles.resultsContainer}>
           <Text style={styles.resultsTitle}>Ocena:</Text>
@@ -182,13 +189,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   input: {
-    margin: 20,
+    width: "100%",
     borderWidth: 1,
     borderRadius: 5,
     borderColor: "black",
     fontSize: 30,
     textAlign: "center",
-    flex: 1,
   },
   resultsContainer: {
     margin: 10,
