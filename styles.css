@@ -1,3 +1,8 @@
+html {
+  height: unset;
+  overflow: auto;
+}
+
 body,
 #root {
   display: flex;
