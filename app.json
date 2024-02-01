@@ -1,31 +1,36 @@
 {
   "expo": {
-    "name": "Kalkulator ocen",
+    "name": "kalkulator-ocen",
     "slug": "kalkulator-ocen",
-    "privacy": "unlisted",
-    "platforms": [
-      "ios",
-      "android"
-    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#424a60"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.kalkulator-ocen"
     },
     "android": {
-      "package": "pl.kalkulator"
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "16eb15aa-26e0-44c1-a053-6214479e7bfa"
+      }
     }
   }
 }
