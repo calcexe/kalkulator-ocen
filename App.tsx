@@ -25,20 +25,33 @@ const getResult = (percent: number) => {
 
 export default function App() {
   const [gained, setGained] = useState(0);
+  const [gainedText, setGainedText] = useState("");
+
   const [max, setMax] = useState(0);
+  const [maxText, setMaxText] = useState("");
+
   const [percent, setPercent] = useState(0);
+
   const [result, setResult] = useState("");
 
+  useEffect(() => {
+    console.log(new Date().toISOString());
+  }, []);
+
   const updateGainedPoints = (text: string) => {
-    const number = Number(normalizeNumber(text));
+    const normalized = normalizeNumber(text);
+    const number = Number(normalized);
     if (!isNaN(number)) {
+      setGainedText(normalized);
       setGained(number);
     }
   };
 
   const updateMaxPoints = (text: string) => {
+    const normalized = normalizeNumber(text);
     const number = Number(normalizeNumber(text));
     if (!isNaN(number)) {
+      setMaxText(normalized);
       setMax(number);
     }
   };
@@ -76,18 +89,18 @@ export default function App() {
             <View style={{ flex: 1, margin: 20 }}>
               <TextInput
                 style={styles.input}
-                keyboardType="number-pad"
+                keyboardType="decimal-pad"
                 onChangeText={(text) => updateMaxPoints(text)}
-                value={max.toString()}
+                value={maxText}
               />
             </View>
 
             <View style={{ flex: 1, margin: 20 }}>
               <TextInput
                 style={styles.input}
-                keyboardType="number-pad"
+                keyboardType="decimal-pad"
                 onChangeText={(text) => updateGainedPoints(text)}
-                value={gained.toString()}
+                value={gainedText}
               />
             </View>
           </View>
